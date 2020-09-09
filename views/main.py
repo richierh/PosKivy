@@ -19,13 +19,11 @@ from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.gridlayout import GridLayout
 from kivy.lang import Builder 
 
-Builder.load_file('button.kv')
+Builder.load_file('views/button.kv')
 
 class main_kv(GridLayout):
 
     pass
-
-
 
 
 class MainApp(App):
@@ -39,4 +37,8 @@ class MainApp(App):
 
 
 if __name__ == '__main__':
+    # import os
+    # p = os.path.abspath('..')
     MainApp().run()
+
+
