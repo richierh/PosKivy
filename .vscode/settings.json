@@ -1,3 +1,18 @@
 {
-    "python.pythonPath": "/home/pmc/.virtualenvs/kivy-app/bin/python"
+    "python.pythonPath": "/home/pmc/.virtualenvs/kivy-app/bin/python",
+    "sqltools.connections": [
+        {
+            "askForPassword": true,
+            "database": "TBKamojang",
+            "driver": "MySQL",
+            "mysqlOptions": {
+                "authProtocol": "default"
+            },
+            "name": "MySqlDB",
+            "port": 3306,
+            "previewLimit": 50,
+            "server": "localhost",
+            "username": "pmc"
+        }
+    ]
 }
