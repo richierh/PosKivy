@@ -8,6 +8,7 @@ from kivy.factory import Factory
 from kivy.lang import Builder
 from kivy.loader import Loader
 
+
 from kivymd import images_path
 from kivymd.app import MDApp
 from kivymd.uix.expansionpanel import MDExpansionPanel, MDExpansionPanelOneLine

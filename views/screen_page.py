@@ -8,6 +8,9 @@ from kivy.properties import StringProperty, ListProperty
 from kivymd.theming import ThemableBehavior
 from kivy.uix.button import Button
 from kivymd.uix.navigationdrawer import MDNavigationDrawer
+from kivy.uix.scrollview import ScrollView
+from kivy.uix.popup import Popup
+from kivymd.uix.dialog import MDDialog
 
 kv_main = """
 ScreenManager:
@@ -26,11 +29,12 @@ kv_screen1 = """
             anchor_x:'right'
             anchor_y:'center' 
             padding : 10
-            MDRectangleFlatButton:
+            MDRectangleFlatIconButton:
                 text: "Sign In"
-                text_color: 0, 0, 1, 1
-                md_bg_color: 1, 1, 0, 1
-                size: 75, 50
+                icon: "login"
+                # text_color: 0, 0, 1, 1
+                # md_bg_color: 1, 1, 0, 1
+                size: 130, 50
                 # pos_hint :{"center_x":.5,"center_y":.5}
                 on_release:app.root.current = 'pos_m'
         
@@ -38,12 +42,12 @@ kv_screen1 = """
             anchor_x:'left'
             anchor_y:'center' 
             padding: 10
-            MDRectangleFlatButton:
+            MDRectangleFlatIconButton:
                 text: "Sign Up"
-                text_color: 0, 0, 1, 1
-                md_bg_color: 1, 1, 0, 1
-                size: 75, 50
-                # pos_hint :{"center_x":.5,"center_y":.5}
+                # text_color: 0, 0, 1, 1
+                # md_bg_color: 1, 1, 0, 1
+                size: 125, 50
+                pos_hint :{"center_x":.5,"center_y":.5}
                 on_release:app.root.current = 'pos_m'
     
 """
@@ -51,6 +55,13 @@ kv_screen2 = """
 <PosScreen@Screen>:
     Navi:
 """
+class OpenDialog(MDDialog):
+
+    pass
+
+
+class List(ScrollView):
+    pass
 
 class ContentNavigationDrawer(BoxLayout):
     pass
@@ -77,6 +88,7 @@ class Button2(Button):
 
 class PosScreen(Screen):
     pass
+
 class LoginScreen(Screen ):
     pass
 
@@ -114,17 +126,25 @@ class DrawerList(ThemableBehavior, MDList):
                     ItemDrawer(icon=icon_name, text=icons_item[icon_name])
                 )
 
+class Popup(MDDialog):
+    pass
 
 class ScreenManagerApp(MDApp):
 
     def build(self):
         # Builder.load_file("views/coba.kv")
         Builder.load_file("views/navi.kv")
+        Builder.load_file("views/popups.kv")
         Builder.load_string(kv_screen1)
         Builder.load_string(kv_screen2)
         Window.size =  (400,600)
         self.title = "Point Of sales - Kivy"
         return Builder.load_string(kv_main)
+
+    # def king(self):
+    #     print ("success")
+    #     return Builder.load_file("views/popups.kv")
+
 
 def main():
     ScreenManagerApp().run()

@@ -11,8 +11,10 @@
                     title: "Navigation Drawer"
                     elevation: 10
                     left_action_items: [['menu', lambda x: nav_drawer.toggle_nav_drawer()]]
-
+                    right_action_items: [["dots-vertical", lambda x: app.Popup]]
+                Popup:
                 Widget:
+                
 
 
     MDNavigationDrawer:
@@ -47,8 +49,25 @@
         font_style: "Caption"
         size_hint_y: None
         height: self.texture_size[1]
+    
+    List:
 
+        # DrawerList:
+        #     id: md_list
+
+
+<List>:
     ScrollView:
+        MDList:
 
-        DrawerList:
-            id: md_list
+            OneLineAvatarIconListItem:
+                on_release: print("Click!")
+                text:"Beranda"
+                IconLeftWidget:
+                    icon: "home"
+
+            OneLineAvatarIconListItem:
+                on_release: print("Click 2!")
+                text:"Penjualan"
+                IconLeftWidget:
+                    icon: "account"
