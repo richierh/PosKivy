@@ -1,44 +1,110 @@
-'''
-Application built from a  .kv file
-==================================
-
-This shows how to implicitly use a .kv file for your application. You
-should see a full screen button labelled "Hello from test.kv".
-
-After Kivy instantiates a subclass of App, it implicitly searches for a .kv
-file. The file test.kv is selected because the name of the subclass of App is
-TestApp, which implies that kivy should try to load "test.kv". That file
-contains a root Widget.
-'''
-
-import kivy
-kivy.require('1.11.1')
-
-from kivy.app import App
+from kivymd.app import MDApp
+from kivy.uix.screenmanager import ScreenManager, Screen
+from kivy.lang import Builder
+from kivy.core.window import Window
 from kivy.uix.boxlayout import BoxLayout
-from kivy.uix.gridlayout import GridLayout
-from kivy.lang import Builder 
+from kivymd.uix.list import OneLineIconListItem, MDList
+from kivy.properties import StringProperty, ListProperty
+from kivymd.theming import ThemableBehavior
+from kivy.uix.button import Button
+from kivymd.uix.navigationdrawer import MDNavigationDrawer
+from kivymd.uix.dialog import MDDialog
+from kivy.uix.floatlayout import FloatLayout
+from kivy.uix.popup import Popup
+from kivymd.uix.button import MDFlatButton
+from views.OpenDialog import OpenDialog
 
-Builder.load_file('views/button.kv')
-
-class main_kv(GridLayout):
-
+class MainWindow(ScreenManager):
     pass
 
+# class OpenDialog(BoxLayout):
+#     pass
 
-class MainApp(App):
+
+class ScreenManagerApp(MDApp):
+
+    dialog=None
 
     def build(self):
+        # Builder.load_file("views/coba.kv")
+        Builder.load_file("views/navi.kv")  
+        Builder.load_file("views/popups.kv")
+        S = Builder.load_file("views/main.kv")
+        Builder.load_file("views/login.kv")
+        Builder.load_file("views/posscreen.kv")
+
+        # Builder.load_string(kv_screen1)
+        # Builder.load_string(kv_screen2)
+        Window.size =  (400,600)
+        self.title = "Point Of sales - Kivy"
+        return MainWindow()
 
 
-        return main_kv()
+    def popup(self):
+        print ("success")
 
-    pass
+        if not self.dialog:
+            self.dialog=MDDialog(
+            type="custom",
+            size_hint=(.7, .6),
+            content_cls=OpenDialog(),               
+            )
+        self.dialog.open()
+        return 
+
+
+def main():
+    ScreenManagerApp().run()
 
 
 if __name__ == '__main__':
-    # import os
-    # p = os.path.abspath('..')
-    MainApp().run()
+    main()
 
 
+
+
+# from views.Navi import Navi
+
+# kv_main = """
+# ScreenManager:
+#     LoginScreen:
+
+#     PosScreen:
+#         name:"pos_m"
+
+# """
+
+# kv_screen1 = """
+# <LoginScreen@Screen>:
+#     BoxLayout: 
+#         orientation:"horizontal"
+#         AnchorLayout:
+#             anchor_x:'right'
+#             anchor_y:'center' 
+#             padding : 10
+#             MDRectangleFlatIconButton:
+#                 text: "Sign In"
+#                 icon: "login"
+#                 # text_color: 0, 0, 1, 1
+#                 # md_bg_color: 1, 1, 0, 1
+#                 size: 130, 50
+#                 # pos_hint :{"center_x":.5,"center_y":.5}
+#                 on_release:app.root.current = 'pos_m'
+        
+#         AnchorLayout:
+#             anchor_x:'left'
+#             anchor_y:'center' 
+#             padding: 10
+#             MDRectangleFlatIconButton:
+#                 text: "Sign Up"
+#                 # text_color: 0, 0, 1, 1
+#                 # md_bg_color: 1, 1, 0, 1
+#                 size: 125, 50
+#                 pos_hint :{"center_x":.5,"center_y":.5}
+#                 on_release:app.root.current = 'pos_m'
+    
+# """
+# kv_screen2 = """
+# <PosScreen@Screen>:
+#     Navi:
+# """

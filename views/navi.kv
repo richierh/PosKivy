@@ -1,4 +1,6 @@
-<Navi@NavigationLayout>
+#:import Factory kivy.factory.Factory
+#:import Navi views.Navi
+<Navi>
 
     ScreenManager:
 
@@ -11,8 +13,7 @@
                     title: "Navigation Drawer"
                     elevation: 10
                     left_action_items: [['menu', lambda x: nav_drawer.toggle_nav_drawer()]]
-                    right_action_items: [["dots-vertical", lambda x: app.Popup]]
-                Popup:
+                    right_action_items: [["dots-vertical", lambda x: app.popup()]]
                 Widget:
                 
 

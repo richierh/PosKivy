@@ -1,0 +1,28 @@
+<LoginScreen@Screen>:
+    BoxLayout: 
+        orientation:"horizontal"
+        AnchorLayout:
+            anchor_x:'right'
+            anchor_y:'center' 
+            padding : 10
+            MDRectangleFlatIconButton:
+                text: "Sign In"
+                icon: "login"
+                # text_color: 0, 0, 1, 1
+                # md_bg_color: 1, 1, 0, 1
+                size: 130, 50
+                # pos_hint :{"center_x":.5,"center_y":.5}
+                on_release:app.root.current = 'pos_m'
+        AnchorLayout:
+            anchor_x:'left'
+            anchor_y:'center' 
+            padding: 10
+            MDRectangleFlatIconButton:
+                text: "Sign Up"
+                # text_color: 0, 0, 1, 1
+                # md_bg_color: 1, 1, 0, 1
+                size: 125, 50
+                pos_hint :{"center_x":.5,"center_y":.5}
+                on_release:app.root.current = 'pos_m'
+    
+        

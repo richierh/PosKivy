@@ -1,4 +1,4 @@
-from views.main import MainApp
+from views.main import main
 
 
-MainApp().run()
+main()
