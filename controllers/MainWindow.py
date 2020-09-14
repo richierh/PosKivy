@@ -1,10 +1,9 @@
 from kivymd.app import MDApp
-from kivy.uix.screenmanager import ScreenManager, Screen
 from kivy.lang import Builder
 from kivy.core.window import Window
 from kivy.uix.boxlayout import BoxLayout
 from kivymd.uix.list import OneLineIconListItem, MDList
-from kivy.properties import StringProperty, ListProperty
+from kivy.properties import StringProperty, ListProperty,ObjectProperty
 from kivymd.theming import ThemableBehavior
 from kivy.uix.button import Button
 from kivymd.uix.navigationdrawer import MDNavigationDrawer
@@ -12,49 +11,66 @@ from kivymd.uix.dialog import MDDialog
 from kivy.uix.floatlayout import FloatLayout
 from kivy.uix.popup import Popup
 from kivymd.uix.button import MDFlatButton
-from views.OpenDialog import OpenDialog
+from kivy.uix.widget import Widget
+from controllers.posscreen import PosScreen
+from controllers.login import LoginScreen
+# from views.OpenDialog import OpenDialog
 
-class MainWindow(ScreenManager):
-    pass
 
-# class OpenDialog(BoxLayout):
+# class MainWindow(Widget):
 #     pass
 
-
-class ScreenManagerApp(MDApp):
-
-    dialog=None
-
+class Start_Screen(MDApp):
+    kv_directory = 'views'
+    screen_manager = ObjectProperty(None)
     def build(self):
-        # Builder.load_file("views/coba.kv")
-        Builder.load_file("views/navi.kv")  
-        Builder.load_file("views/popups.kv")
-        S = Builder.load_file("views/main.kv")
-        Builder.load_file("views/login.kv")
-        Builder.load_file("views/posscreen.kv")
+        self.theme_cls.theme_style = "Light"
+        self.theme_cls.primary_palette = "Blue"
 
-        # Builder.load_string(kv_screen1)
-        # Builder.load_string(kv_screen2)
+    # pos_m=ObjectProperty(None)
+    # login_m=ObjectProperty(None)
+
+    # dialog=None
+    # def __init__(self,*args,**kwargs):
+    #     super().__init__(*args,**kwargs)
+
+    # def build(self):
+        # Builder.load_file("views/main.kv")
+        # Builder.load_file("views/navi.kv")  
+        # Builder.load_file("views/popups.kv")
+        # # Builder.load_file("views/login.kv")
+        # Builder.load_file("views/posscreen.kv")
         Window.size =  (400,600)
-        self.title = "Point Of sales - Kivy"
-        return MainWindow()
+        # self.title = "Point Of sales - Kivy"
 
 
-    def popup(self):
-        print ("success")
 
-        if not self.dialog:
-            self.dialog=MDDialog(
-            type="custom",
-            size_hint=(.7, .6),
-            content_cls=OpenDialog(),               
-            )
-        self.dialog.open()
-        return 
+
+# All the event comes here
+
+# class PopUpScreen(ScreenManagerApp):
+#     dialog=None
+
+#     def __init__(self,*args,**kwargs):
+#         super().__init__(*args,**kwargs)
+#     def popup(self):
+#         print ("success")
+
+#         if not self.dialog:
+#             self.dialog=MDDialog(
+#             type="custom",
+#             size_hint=(.7, .6),
+#             content_cls=OpenDialog(),               
+#             )
+#         self.dialog.open()
+#         return 
+    
+#     def hello(self):
+#         print("masuk")
 
 
 def main():
-    ScreenManagerApp().run()
+    Start_Screen().run()
 
 
 if __name__ == '__main__':

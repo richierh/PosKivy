@@ -1,11 +1,10 @@
-#:import Factory kivy.factory.Factory
-#:import Navi views.Navi
-<Navi>
-
+<Navi@NavigationLayout>:
     ScreenManager:
-
+        id:screenmanager
         Screen:
-
+            id:screen0
+            name:"screen0"
+            manager:screenmanager
             BoxLayout:
                 orientation: 'vertical'
 
@@ -15,15 +14,23 @@
                     left_action_items: [['menu', lambda x: nav_drawer.toggle_nav_drawer()]]
                     right_action_items: [["dots-vertical", lambda x: app.popup()]]
                 Widget:
-                
+                MDRectangleFlatButton:
+                    text:"Prees here"
+                    on_release: self.parent.parent.parent.parent.parent.parent.hello()
 
+                    # on_release: root.ids.screenmanager.current="screen1"
+
+        Screen1:
+        Screen2:
+        Screen3:
 
     MDNavigationDrawer:
         id: nav_drawer
-
         ContentNavigationDrawer:
 
-<ContentNavigationDrawer>:
+
+
+<ContentNavigationDrawer@BoxLayout>:
     orientation: "vertical"
     padding: "8dp"
     spacing: "8dp"
@@ -50,14 +57,18 @@
         font_style: "Caption"
         size_hint_y: None
         height: self.texture_size[1]
-    
+
+    MDRectangleFlatButton:
+        text:"this is screen 1"
+        on_release:'screen1'
+
     List:
 
         # DrawerList:
         #     id: md_list
 
 
-<List>:
+<List@ScrollView>:
     ScrollView:
         MDList:
 
@@ -72,3 +83,21 @@
                 text:"Penjualan"
                 IconLeftWidget:
                     icon: "account"
+
+
+<Screen1@Screen>:
+    name:"screen1"
+    MDRectangleFlatButton:
+        text:"this is screen 1"
+        on_release: app.root.ids.scr_mngr.current = 'screen0'
+<Screen2@Screen>:
+    name:"screen2"
+    MDRectangleFlatButton:
+        text:"this is screen 2"
+        on_release: app.root.ids.scr_mngr.current = 'screen2'
+
+<Screen3@Screen>:
+    name:"screen3"
+    MDRectangleFlatButton:
+        text:"this is screen 3"
+        on_release: app.root.ids.scr_mngr.current = 'screen0'

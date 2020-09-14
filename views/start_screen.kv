@@ -1,0 +1,19 @@
+#: include views/login.kv
+#: include views/posscreen.kv
+
+BoxLayout:
+    orientation:'vertical'
+    ScreenManager:
+        id:screen_mgr
+        screen_manager:screen_mgr
+        # pos_m: pos_m
+        # login_m:login_m
+        LoginScreen:
+            id:login_m
+            name:"login_m"
+        PosScreen:
+            id:pos_m
+            name:"pos_m"
+# <LoginScreen@Screen>:
+#     Button:
+#         text:"this is screen 1"
