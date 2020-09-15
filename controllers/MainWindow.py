@@ -14,11 +14,7 @@ from kivymd.uix.button import MDFlatButton
 from kivy.uix.widget import Widget
 from controllers.posscreen import PosScreen
 from controllers.login import LoginScreen
-# from views.OpenDialog import OpenDialog
 
-
-# class MainWindow(Widget):
-#     pass
 
 class Start_Screen(MDApp):
     kv_directory = 'views'
@@ -26,6 +22,7 @@ class Start_Screen(MDApp):
     def build(self):
         self.theme_cls.theme_style = "Light"
         self.theme_cls.primary_palette = "Blue"
+        Builder.load_file("views/popups.kv")
 
     # pos_m=ObjectProperty(None)
     # login_m=ObjectProperty(None)

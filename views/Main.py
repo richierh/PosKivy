@@ -1,2 +1,0 @@
-class PointOfSalesMainWindows(BoxLayout):
-    pass

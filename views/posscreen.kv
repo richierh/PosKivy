@@ -1,9 +1,9 @@
 <PosScreen>:
     Navigation:
 
-
 <Navigation>:
-    nav:nav_drawer
+    nav:toolbarku
+    # recflatbutton:recflatbutton
     ScreenManager:
         id:screenmanager
         Screen:
@@ -13,18 +13,19 @@
             BoxLayout:
                 orientation: 'vertical'
 
-                MDToolbarKu:
-                    # title: "Navigation Drawer"
-                    # elevation: 10
-                    # left_action_items: [['menu', lambda x: nav_drawer.toggle_nav_drawer()]]
-                    # right_action_items: [["dots-vertical", lambda x: self.parent.parent.parent.parent.parent.popup()]]
-               
+                MDToolbar:
+                    id:toolbarku
+                    title: "Navigation Drawer"
+                    elevation: 10
+                    left_action_items: [['menu', lambda x: nav_drawer.set_state()]]
+                    right_action_items: [["dots-vertical", lambda x: root.popup()]]
+
                 Widget:
                 MDRectangleFlatButton:
-                    text:"Prees here"
-                    on_release: self.parent.parent.parent.parent.parent.parent.hello()
-
-                    # on_release: root.ids.screenmanager.current="screen1"
+                    text:"Prees here or"
+                    # on_release: self.parent.parent.parent.parent.parent.parent.hello()
+                    # id:recflatbutton
+                    on_release: nav_drawer.set_state()
 
         Screen1:
         Screen2:
@@ -50,7 +51,7 @@
             id: avatar
             size_hint: None, None
             size: "56dp", "56dp"
-            source: "kivymd.png"
+            source: "views/kivymd.png"
 
     MDLabel:
         text: "KivyMD library"
@@ -107,12 +108,12 @@
         text:"this is screen 3"
         on_release: app.root.ids.scr_mngr.current = 'screen0'
 
-<MDToolbarKu>:
-    title: "Navigation Drawer"
-    elevation: 10
-    # left_action_items: [['menu', lambda x: self.parent.parent.parent.parent.ids.nav_drawer.toggle_nav_drawer()]]
-    left_action_items: [['menu', lambda x: self.parent.ids.nav_drawer.toggle_nav_drawer()]]
+# <MDToolbarKu>:
+#     title: "Navigation Drawer"
+#     elevation: 10
+#     # left_action_items: [['menu', lambda x: self.parent.parent.parent.parent.ids.nav_drawer.toggle_nav_drawer()]]
+#     # left_action_items: [['menu', lambda x: self.nav.ids.nav_drawer.toggle_nav_drawer()]]
 
-    # left_action_items: [['menu', lambda x: root.nav_drawer.toggle_nav_drawer()]]
+#     # left_action_items: [['menu', lambda x: root.nav_drawer.toggle_nav_drawer()]]
 
-    right_action_items: [["dots-vertical", lambda x: root.popup()]]
+#     right_action_items: [["dots-vertical", lambda x: root.popup()]]

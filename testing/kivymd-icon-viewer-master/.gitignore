@@ -1,9 +1,0 @@
-__pycache__/
-bin/
-*.pyc
-*.pyo
-.venv/
-.pytest_cache/
-*.mp3
-/temp
-Pipfile.lock

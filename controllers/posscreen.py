@@ -3,6 +3,10 @@ from kivymd.uix.button import MDRectangleFlatButton
 from kivy.properties import ObjectProperty
 from kivymd.uix.toolbar import MDToolbar
 from kivymd.uix.navigationdrawer import NavigationLayout
+from kivymd.uix.dialog import MDDialog
+from kivy.lang import Builder
+from kivy.uix.boxlayout import BoxLayout
+from controllers.popups import OpenDialog
 
 class PosScreen(Screen):
     pos_m=ObjectProperty(None)
@@ -24,4 +28,28 @@ class MDToolbarKu(MDToolbar):
 
 class Navigation(NavigationLayout):
     nav = ObjectProperty(None)
+    recflatbutton=ObjectProperty(None)
+    dialog=None
+
     pass
+
+    def build(self):
+        print(kv)
+        return Builder.load_string(kv)
+
+    def hello(self):
+        print("ini udah bisa")
+    
+    def popup(self):
+        # kv_directory="views"
+        print("pop up euy")
+        if not self.dialog:
+            self.dialog=MDDialog(
+            type="custom",
+            size_hint=(.7, .6),
+            content_cls=OpenDialog(),               
+            )
+        self.dialog.open()
+        # print(kv_directory)
+        return 
+    
