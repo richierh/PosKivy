@@ -26,7 +26,6 @@ class Start_Screen(MDApp):
 
     # pos_m=ObjectProperty(None)
     # login_m=ObjectProperty(None)
-
     # dialog=None
     # def __init__(self,*args,**kwargs):
     #     super().__init__(*args,**kwargs)
@@ -39,8 +38,6 @@ class Start_Screen(MDApp):
         # Builder.load_file("views/posscreen.kv")
         Window.size =  (400,600)
         # self.title = "Point Of sales - Kivy"
-
-
 
 
 # All the event comes here

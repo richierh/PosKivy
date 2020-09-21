@@ -1,76 +1,130 @@
-<LoginScreen>:
-    MDBoxLayout:
-        orientation:"vertical"
-        canvas.before:
-            Rectangle:
-                size: self.size
-                pos: self.pos
-                source: 'views/logo/background.jpg'
+# <LoginScreen>:
+#     MDBoxLayout:
+#         orientation:"vertical"
+#         canvas.before:
+#             Rectangle:
+#                 size: self.size
+#                 pos: self.pos
+#                 source: 'views/logo/background.jpg'
 
-        MDLabel:
-            halign:"center"
-            text:""
-        MDIconButton:
-            icon:"views/logo/python.png"
-            pos_hint:{"center_x":.5,"center_y":.5}
-            user_font_size:"150sp"
-            halign:"center"
-        HSeparator:
-        MDTextField:
-            title:"Username"
-            height: "30dp"
-            size_hint:.3,None
-            hint_text:"Username/Email/Phone"
-            pos_hint:{"center_x":.5,"center_y":.5}
-        MDTextField:
-            title:"Passwords"
-            # padding:10,10
-            size_hint:.3,None
-            hint_text:"Passwords"
-            pos_hint:{"center_x":.5,"center_y":.5}
-        MDBoxLayout: 
-            orientation:"horizontal"
-            AnchorLayout:
-                anchor_x:'right'
-                anchor_y:'top' 
-                padding: 10
-                MDRectangleFlatIconButton:
-                    text: "Sign In"
-                    icon: "login"
-                    # text_color: 0, 0, 1, 1
-                    # md_bg_color: 1, 1, 0, 1
-                    size: 130, 50
-                    # pos_hint :{"center_x":.5,"center_y":1}
-                    # on_release:app.root.ids.screen_mgr.current = 'pos_m'
-                    on_release:root.sign_in()
-                    # text_color:0,0,0,1
+#         MDLabel:
+#             halign:"center"
+#             text:""
+#         MDIconButton:
+#             icon:"views/logo/python.png"
+#             pos_hint:{"center_x":.5,"center_y":.5}
+#             user_font_size:"150sp"
+#             halign:"center"
+#         HSeparator:
+#         MDTextField:
+#             title:"Username"
+#             height: "30dp"
+#             size_hint:.3,None
+#             hint_text:"Username/Email/Phone"
+#             pos_hint:{"center_x":.5,"center_y":.5}
+#         MDTextField:
+#             title:"Passwords"
+#             # padding:10,10
+#             size_hint:.3,None
+#             hint_text:"Passwords"
+#             pos_hint:{"center_x":.5,"center_y":.5}
+#         MDBoxLayout: 
+#             orientation:"horizontal"
+#             AnchorLayout:
+#                 anchor_x:'right'
+#                 anchor_y:'top' 
+#                 padding: 10
+#                 MDRectangleFlatIconButton:
+#                     text: "Sign In"
+#                     icon: "login"
+#                     # text_color: 0, 0, 1, 1
+#                     # md_bg_color: 1, 1, 0, 1
+#                     size: 130, 50
+#                     # pos_hint :{"center_x":.5,"center_y":1}
+#                     # on_release:app.root.ids.screen_mgr.current = 'pos_m'
+#                     on_release:root.sign_in()
+#                     # text_color:0,0,0,1
 
-            AnchorLayout:
-                anchor_x:'left'
-                anchor_y:'top' 
-                padding: 10
-                MDRectangleFlatIconButton:
-                    text: "Sign Up"
-                    icon: "account-arrow-right"
-                    # text_color: 0, 0, 1, 1
-                    # md_bg_color: 1, 1, 0, 1
-                    size: 130, 50
-                    # pos_hint :{"center_x":.5,"center_y":1}
-                    on_release:app.root.current = 'pos_m'
+#             AnchorLayout:
+#                 anchor_x:'left'
+#                 anchor_y:'top' 
+#                 padding: 10
+#                 MDRectangleFlatIconButton:
+#                     text: "Sign Up"
+#                     icon: "account-arrow-right"
+#                     # text_color: 0, 0, 1, 1
+#                     # md_bg_color: 1, 1, 0, 1
+#                     size: 130, 50
+#                     # pos_hint :{"center_x":.5,"center_y":1}
+#                     on_release:app.root.current = 'pos_m'
                     
         
-<Separator@Widget>:
-    canvas:
-        Color:
-            rgba: 0,0,0,0 # self.root.bg
-        Rectangle:
-            pos: self.pos
-            size: self.size
+# <Separator@Widget>:
+#     canvas:
+#         Color:
+#             rgba: 0,0,0,0 # self.root.bg
+#         Rectangle:
+#             pos: self.pos
+#             size: self.size
 
-<HSeparator@Separator>:
-    size_hint_y: .25
-    height: dp(2)
+# <HSeparator@Separator>:
+#     size_hint_y: .25
+#     height: dp(2)
 
-<VSeparator@Separator>:
-    size_hint_x: None
-    width: dp(2)
+# <VSeparator@Separator>:
+#     size_hint_x: None
+#     width: dp(2)
+
+
+<LoginScreen> :
+    # md_bg_color : [35/255,59/255,54/255,1]
+    MDCard :
+        size_hint : None,None
+        size : 300,400
+        pos_hint : {"center_x":.5,"center_y":.5}
+        elevation : 15
+        # md_bg_color : [35/255,49/255,48/255,1]
+        # md_bg_color:theme_cls.prima
+        padding : 20
+        spacing : 30
+        orientation : "vertical"
+        # Adding items to the card
+        MDLabel :
+            text : 'LOGIN'
+            font_style : 'Button'
+            font_size : 45
+            halign : "center"
+            size_hint_y : None
+            height : self.texture_size[1]
+            padding_y : 15
+        MDTextFieldRound :
+            hint_text : "username"
+            icon_right : "account"
+            size_hint_x : None
+            width : 220
+            # font_size : 20
+            pos_hint : {"center_x":.5}
+            # color_active : [1,1,1,1]
+        MDTextFieldRound :
+            hint_text : "password"
+            icon_right : "eye-off"
+            size_hint_x : None
+            width : 220
+            # font_size : 20
+            pos_hint : {"center_x":.5}
+            # color_active : [1,1,1,1]
+            password : True
+
+        MDRoundFlatButton :
+            text : 'Login'
+            pos_hint : {"center_x":.5}
+
+        MDRoundFlatButton :
+            text : 'SIGN-UP'
+            pos_hint : {"center_x":.5}
+            # font_size : 15
+        
+
+        # Widget :
+        #     size_hint_y : None
+        #     height : 30
