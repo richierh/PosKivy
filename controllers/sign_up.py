@@ -8,3 +8,7 @@ class SignUpScreen(Screen):
    
     def create(self):
         print ("you just create account")
+
+    def left(self):
+        print("back screen")
+        self.parent.screen_manager.current="login_m"

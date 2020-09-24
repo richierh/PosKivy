@@ -53,3 +53,6 @@ class Navigation(NavigationLayout):
         # print(kv_directory)
         return 
     
+    def back(self):
+        self.parent.parent.screen_manager.current="login_m"
+        print("success")
