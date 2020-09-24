@@ -1,5 +1,6 @@
 from kivy.uix.screenmanager import Screen
 from kivy.properties import ObjectProperty
+
 class LoginScreen(Screen):
     login_m = ObjectProperty(None)
 
@@ -16,3 +17,9 @@ class LoginScreen(Screen):
         except :
 
             print("Sign in failed , ")
+    
+    def sign_up(self):
+
+        self.parent.screen_manager.current="sign_up"    
+        print("you enter sign up")        
+

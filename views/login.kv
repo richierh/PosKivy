@@ -78,6 +78,13 @@
 
 <LoginScreen> :
     # md_bg_color : [35/255,59/255,54/255,1]
+    login_m:login_m
+    canvas.before:
+        Rectangle:
+            size: self.size
+            pos: self.pos
+            source: 'views/logo/background.jpg'
+
     MDCard :
         size_hint : None,None
         size : 300,400
@@ -86,9 +93,22 @@
         # md_bg_color : [35/255,49/255,48/255,1]
         # md_bg_color:theme_cls.prima
         padding : 20
-        spacing : 30
+        spacing : 15
         orientation : "vertical"
         # Adding items to the card
+        MDBoxLayout:
+            id: box_top
+            # spacing: "20dp"
+            # adaptive_height: True
+
+            Image:
+                source: "views/logo/python.png"
+                allow_stretch: True
+                keep_ratio:True
+                # size_hint: 1,1
+                # pos_hint: {'center_x': 0.5, 'center_y': 0.5}  
+
+                # size: dp(50), dp(50)
         MDLabel :
             text : 'LOGIN'
             font_style : 'Button'
@@ -116,15 +136,20 @@
             password : True
 
         MDRoundFlatButton :
+            id: login_m
             text : 'Login'
             pos_hint : {"center_x":.5}
+            # on_release:app.root.ids.screen_mgr.current = 'pos_m'
+            on_release: root.sign_in()
 
         MDRoundFlatButton :
             text : 'SIGN-UP'
             pos_hint : {"center_x":.5}
             # font_size : 15
-        
+            on_release: root.sign_up()
+
 
         # Widget :
         #     size_hint_y : None
         #     height : 30
+

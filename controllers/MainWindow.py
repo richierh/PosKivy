@@ -14,6 +14,7 @@ from kivymd.uix.button import MDFlatButton
 from kivy.uix.widget import Widget
 from controllers.posscreen import PosScreen
 from controllers.login import LoginScreen
+from controllers.sign_up import SignUpScreen
 
 
 class Start_Screen(MDApp):
