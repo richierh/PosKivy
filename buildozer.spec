@@ -1,19 +1,19 @@
 [app]
 
 # (str) Title of your application
-title = My Application
+title = Hai Every Python APK
 
 # (str) Package name
-package.name = myapp
+package.name = DemoTest
 
 # (str) Package domain (needed for android/ios packaging)
-package.domain = org.test
+package.domain = org.Richie
 
 # (str) Source code where the main.py live
 source.dir = .
 
 # (list) Source files to include (let empty to include all the files)
-source.include_exts = py,png,jpg,kv,atlas
+source.include_exts = py,png,jpg,kv,atlas,jpeg,ttf,md,json
 
 # (list) List of inclusions using pattern matching
 #source.include_patterns = assets/*,images/*.png
@@ -36,11 +36,12 @@ version = 0.1
 
 # (list) Application requirements
 # comma separated e.g. requirements = sqlite3,kivy
-requirements = python3=3.6.8, kivy==1.11.1, kivymd==0.104.1
+requirements = python3,kivy==2.0.0rc3,https://github.com/kivymd/KivyMD/archive/master.zip,sdl2_ttf==2.0.15
 
 # (str) Custom source folders for requirements
 # Sets custom source for any requirements with recipes
-# requirements.source.kivy = ../../kivy
+requirements.source.kivy = ../../kivy
+requirements.source.kivymd = ../../kivymd
 
 # (list) Garden requirements
 #garden_requirements =

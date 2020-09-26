@@ -37,7 +37,7 @@ class Start_Screen(MDApp):
         # Builder.load_file("views/popups.kv")
         # # Builder.load_file("views/login.kv")
         # Builder.load_file("views/posscreen.kv")
-        Window.size =  (400,600)
+        # Window.size =  (400,600)
         # self.title = "Point Of sales - Kivy"
 
 
