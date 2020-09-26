@@ -1,5 +1,7 @@
 #: include views/login.kv
 #: include views/posscreen.kv
+#: include views/sign_up.kv
+
 
 BoxLayout:
     orientation:'vertical'
@@ -14,6 +16,13 @@ BoxLayout:
         PosScreen:
             id:pos_m
             name:"pos_m"
+        SignUpScreen:
+            id:sign_up
+            name:"sign_up"
+        
 # <LoginScreen@Screen>:
+#     Button:
+#         text:"this is screen 1"
+# <SignUpScreen@Screen>:
 #     Button:
 #         text:"this is screen 1"

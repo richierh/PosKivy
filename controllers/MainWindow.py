@@ -14,6 +14,7 @@ from kivymd.uix.button import MDFlatButton
 from kivy.uix.widget import Widget
 from controllers.posscreen import PosScreen
 from controllers.login import LoginScreen
+from controllers.sign_up import SignUpScreen
 
 
 class Start_Screen(MDApp):
@@ -26,7 +27,6 @@ class Start_Screen(MDApp):
 
     # pos_m=ObjectProperty(None)
     # login_m=ObjectProperty(None)
-
     # dialog=None
     # def __init__(self,*args,**kwargs):
     #     super().__init__(*args,**kwargs)
@@ -37,10 +37,8 @@ class Start_Screen(MDApp):
         # Builder.load_file("views/popups.kv")
         # # Builder.load_file("views/login.kv")
         # Builder.load_file("views/posscreen.kv")
-        Window.size =  (400,600)
+        # Window.size =  (400,600)
         # self.title = "Point Of sales - Kivy"
-
-
 
 
 # All the event comes here
