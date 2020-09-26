@@ -1,13 +1,13 @@
 [app]
 
 # (str) Title of your application
-title = My Application
+title = Aplikasi Sederhana
 
 # (str) Package name
-package.name = myapp
+package.name = DemoSaja
 
 # (str) Package domain (needed for android/ios packaging)
-package.domain = org.test
+package.domain = org.Richie
 
 # (str) Source code where the main.py live
 source.dir = .
@@ -36,7 +36,7 @@ version = 0.1
 
 # (list) Application requirements
 # comma separated e.g. requirements = sqlite3,kivy
-requirements = python3,kivy
+requirements = python3==3.6.9,kivy,kivymd
 
 # (str) Custom source folders for requirements
 # Sets custom source for any requirements with recipes
@@ -65,10 +65,10 @@ orientation = portrait
 # author = © Copyright Info
 
 # change the major version of python used by the app
-osx.python_version = 3
+osx.python_version = 3.6.9
 
 # Kivy version to use
-osx.kivy_version = 1.9.1
+osx.kivy_version = 1.11.1
 
 #
 # Android specific
@@ -213,7 +213,7 @@ android.accept_sdk_license = True
 #android.uses_library =
 
 # (str) Android logcat filters to use
-#android.logcat_filters = *:S python:D
+android.logcat_filters = *:S python:D
 
 # (bool) Copy library instead of making a libpymodules.so
 #android.copy_libs = 1
