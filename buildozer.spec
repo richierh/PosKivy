@@ -40,8 +40,8 @@ requirements = python3,kivy==2.0.0rc3,https://github.com/kivymd/KivyMD/archive/m
 
 # (str) Custom source folders for requirements
 # Sets custom source for any requirements with recipes
-requirements.source.kivy = ../../kivy
-requirements.source.kivymd = ../../kivymd
+#requirements.source.kivy = ../../kivy
+#requirements.source.kivymd = ../../KivyMD/kivymd
 
 # (list) Garden requirements
 #garden_requirements =

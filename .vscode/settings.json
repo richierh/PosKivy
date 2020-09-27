@@ -1,5 +1,5 @@
 {
-    "python.pythonPath": "/home/pmc/.virtualenvs/kivy-app/bin/python",
+    "python.pythonPath": "/home/pmc/.virtualenvs/kivy3.8/bin/python",
     "sqltools.connections": [
         {
             "askForPassword": true,
