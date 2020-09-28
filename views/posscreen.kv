@@ -2,14 +2,12 @@
     Navigation:
 
 <Navigation>:
-    nav:toolbarku
-    # recflatbutton:recflatbutton
     ScreenManager:
         id:screenmanager
+        screenmanager:screenmanager
         Screen:
             id:screen0
             name:"screen0"
-            manager:screenmanager
             BoxLayout:
                 orientation: 'vertical'
 
@@ -25,9 +23,14 @@
                     text:"Prees here or"
                     # on_release: self.parent.parent.parent.parent.parent.parent.hello()
                     # id:recflatbutton
-                    on_release: nav_drawer.set_state()
+                    # on_release: nav_drawer.set_state()
+                    on_release:root.ids.screenmanager.current="screen2"
+                    # on_release:root.gotoscreen2()
 
         Screen1:
+            id:screen1
+            name:"screen1"
+
         Screen2:
         Screen3:
 
@@ -97,6 +100,7 @@
     MDRectangleFlatButton:
         text:"this is screen 1"
         on_release: app.root.ids.scr_mngr.current = 'screen0'
+        on_press:
 <Screen2@Screen>:
     name:"screen2"
     MDRectangleFlatButton:

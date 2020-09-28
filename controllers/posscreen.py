@@ -12,6 +12,7 @@ from controllers.popups import OpenDialog
 
 class PosScreen(Screen):
     pos_m=ObjectProperty(None)
+    app1=ObjectProperty(None)
     # popup=ObjectProperty(None)
     nav_drawer=ObjectProperty(None)
     pass
@@ -29,6 +30,7 @@ class MDToolbarKu(MDToolbar):
         print("test from toolbar here")
 
 class Navigation(NavigationLayout):
+    app1=ObjectProperty(None)
     nav = ObjectProperty(None)
     recflatbutton=ObjectProperty(None)
     dialog=None
@@ -60,7 +62,12 @@ class Navigation(NavigationLayout):
         self.parent.parent.screen_manager.current="login_m"
         print("success")
 
+    def gotoscreen2(self):
+        print ("okay you are overhere")
+        # print(self.ids.screenmanager.current="screen1")
 
+        self.ids.screenmanager.current="screen1"
+        
 class Tab1(BoxLayout,MDTabsBase):
 
     pass
