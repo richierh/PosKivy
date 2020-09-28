@@ -93,6 +93,7 @@
 
 <Screen1@Screen>:
     name:"screen1"
+    Tab1:
     MDRectangleFlatButton:
         text:"this is screen 1"
         on_release: app.root.ids.scr_mngr.current = 'screen0'
@@ -117,3 +118,12 @@
 #     # left_action_items: [['menu', lambda x: root.nav_drawer.toggle_nav_drawer()]]
 
 #     right_action_items: [["dots-vertical", lambda x: root.popup()]]
+<Tab1@MDTabsBase>:
+    MDTabs:
+        MDLabel:
+            text: "Content"
+            pos_hint: {"center_x": .5, "center_y": .5}
+    MDTabs:
+        MDLabel:
+            text: "Content"
+            pos_hint: {"center_x": .5, "center_y": .5}

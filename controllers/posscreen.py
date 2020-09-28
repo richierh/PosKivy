@@ -4,6 +4,8 @@ from kivy.properties import ObjectProperty
 from kivymd.uix.toolbar import MDToolbar
 from kivymd.uix.navigationdrawer import NavigationLayout
 from kivymd.uix.dialog import MDDialog
+from kivymd.uix.tab import MDTabsBase
+
 from kivy.lang import Builder
 from kivy.uix.boxlayout import BoxLayout
 from controllers.popups import OpenDialog
@@ -51,8 +53,14 @@ class Navigation(NavigationLayout):
             )
         self.dialog.open()
         # print(kv_directory)
+        
         return 
     
     def back(self):
         self.parent.parent.screen_manager.current="login_m"
         print("success")
+
+
+class Tab1(BoxLayout,MDTabsBase):
+
+    pass
