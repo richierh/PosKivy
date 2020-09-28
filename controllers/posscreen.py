@@ -67,7 +67,11 @@ class Navigation(NavigationLayout):
         # print(self.ids.screenmanager.current="screen1")
 
         self.ids.screenmanager.current="screen1"
-        
-class Tab1(BoxLayout,MDTabsBase):
+
+class Tab(BoxLayout,MDTabsBase):
 
     pass
+
+    def on_tab_switch(self,instance):
+        print("work")
+        pass

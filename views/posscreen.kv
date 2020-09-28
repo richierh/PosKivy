@@ -22,9 +22,8 @@
                 MDRectangleFlatButton:
                     text:"Prees here or"
                     # on_release: self.parent.parent.parent.parent.parent.parent.hello()
-                    # id:recflatbutton
                     # on_release: nav_drawer.set_state()
-                    on_release:root.ids.screenmanager.current="screen2"
+                    on_release:root.ids.screenmanager.current="screen1"
                     # on_release:root.gotoscreen2()
 
         Screen1:
@@ -97,10 +96,10 @@
 <Screen1@Screen>:
     name:"screen1"
     Tab1:
-    MDRectangleFlatButton:
-        text:"this is screen 1"
-        on_release: app.root.ids.scr_mngr.current = 'screen0'
-        on_press:
+    # MDRectangleFlatButton:
+    #     text:"this is screen 1"
+    #     on_release: app.root.ids.scr_mngr.current = 'screen0'
+    #     on_press:
 <Screen2@Screen>:
     name:"screen2"
     MDRectangleFlatButton:
@@ -122,12 +121,14 @@
 #     # left_action_items: [['menu', lambda x: root.nav_drawer.toggle_nav_drawer()]]
 
 #     right_action_items: [["dots-vertical", lambda x: root.popup()]]
-<Tab1@MDTabsBase>:
-    MDTabs:
+<Tab1@MDTabs>:
+    Tab:
+        text:"tabs1"
         MDLabel:
             text: "Content"
             pos_hint: {"center_x": .5, "center_y": .5}
-    MDTabs:
+    Tab:
+        text:"tabs2"        
         MDLabel:
-            text: "Content"
+            text: "Content2"
             pos_hint: {"center_x": .5, "center_y": .5}
