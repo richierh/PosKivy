@@ -1,5 +1,4 @@
 {
-    "python.pythonPath": "/home/pmc/.virtualenvs/kivy3.8/bin/python",
     "sqltools.connections": [
         {
             "askForPassword": true,
@@ -14,5 +13,6 @@
             "server": "localhost",
             "username": "pmc"
         }
-    ]
+    ],
+    "python.pythonPath": "/home/cireng/.virtualenvs/KivyPos/bin/python"
 }
