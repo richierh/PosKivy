@@ -12,7 +12,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Build with Buildozer
-        uses: richierh/KivyPos@v1
+        uses: richierh/KivyPos
         id: buildozer
         with:
           workdir: .
