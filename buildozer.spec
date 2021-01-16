@@ -36,7 +36,7 @@ version = 0.1
 
 # (list) Application requirements
 # comma separated e.g. requirements = sqlite3,kivy
-requirements = python3,https://github.com/kivymd/KivyMD/archive/b70abb5.zip, sdl2_ttf==2.0.15
+requirements = python3,kivy,https://github.com/kivymd/KivyMD/archive/b70abb5.zip, sdl2_ttf==2.0.15
 
 #requirements = python3,kivy==2.0.0rc3,https://github.com/kivymd/KivyMD/archive/master.zip,sdl2_ttf==2.0.15
 #requirements = python3,kivy==master,git+https://github.com/HeaTTheatR/KivyMD.git,sdl2_ttf==2.0.15
