@@ -14,10 +14,10 @@ jobs:
       - name: Build with Buildozer
         uses: ArtemSBulgakov/buildozer-action@v1
         id: buildozer
-        command : buildozer android clean
         with:
           workdir: .
           buildozer_version: stable
+          command : buildozer android clean
         
         env:
           APP_ANDROID_ARCH: x86
