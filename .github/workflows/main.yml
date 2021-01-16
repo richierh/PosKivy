@@ -17,9 +17,11 @@ jobs:
         with:
           workdir: .
           buildozer_version: stable
+          command : buildozer android debug
+        
         env:
           APP_ANDROID_ARCH: x86
-          APP_TITLE: Buatan Saya APK
+#           APP_TITLE: Halo Semua
 
       - name: Upload artifacts
         uses: actions/upload-artifact@v2
