@@ -17,6 +17,9 @@ jobs:
         with:
           workdir: .
           buildozer_version: stable
+        env:
+          APP_ANDROID_ARCH: x86
+          APP_TITLE: Buatan Saya APK
 
       - name: Upload artifacts
         uses: actions/upload-artifact@v2
