@@ -2,7 +2,7 @@ from kivy.uix.screenmanager import Screen
 from kivymd.uix.button import MDRectangleFlatButton
 from kivy.properties import ObjectProperty
 from kivymd.uix.toolbar import MDToolbar
-from kivymd.uix.navigationdrawer import NavigationLayout
+#from kivymd.uix.navigationdrawer import NavigationLayout
 from kivymd.uix.dialog import MDDialog
 from kivymd.uix.tab import MDTabsBase
 
@@ -29,7 +29,7 @@ class MDToolbarKu(MDToolbar):
     def popup(self):
         print("test from toolbar here")
 
-class Navigation(NavigationLayout):
+class Navigation(Screen):
     app1=ObjectProperty(None)
     nav = ObjectProperty(None)
     recflatbutton=ObjectProperty(None)

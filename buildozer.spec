@@ -1,13 +1,13 @@
 [app]
 
 # (str) Title of your application
-title = Trial Python APK
+title = LoginSystem
 
 # (str) Package name
-package.name = DemoTest
+package.name = MyDemoLogin
 
 # (str) Package domain (needed for android/ios packaging)
-package.domain = org.Richie
+package.domain = org.gluonit
 
 # (str) Source code where the main.py live
 source.dir = .
@@ -19,10 +19,10 @@ source.include_exts = py,png,jpg,kv,atlas,jpeg,ttf,md,json
 #source.include_patterns = assets/*,images/*.png
 
 # (list) Source files to exclude (let empty to not exclude anything)
-#source.exclude_exts = spec
+#source.exclude_exts = spec,txt
 
 # (list) List of directory to exclude (let empty to not exclude anything)
-#source.exclude_dirs = tests, bin
+#source.exclude_dirs = tests, bin,.vscode,.git,.github
 
 # (list) List of exclusions using pattern matching
 #source.exclude_patterns = license,images/*/*.jpg
@@ -36,7 +36,7 @@ version = 0.1
 
 # (list) Application requirements
 # comma separated e.g. requirements = sqlite3,kivy
-requirements = python3,kivy,https://github.com/kivymd/KivyMD/archive/b70abb5.zip, sdl2_ttf==2.0.15
+requirements = python3==3.9.5,hostpython3==3.9.5,kivy==master,https://github.com/kivymd/KivyMD/archive/master.zip, sdl2_ttf==2.0.15,pillow
 
 #requirements = python3,kivy==2.0.0rc3,https://github.com/kivymd/KivyMD/archive/master.zip,sdl2_ttf==2.0.15
 #requirements = python3,kivy==master,git+https://github.com/HeaTTheatR/KivyMD.git,sdl2_ttf==2.0.15
@@ -89,22 +89,22 @@ fullscreen = 0
 #android.presplash_color = #FFFFFF
 
 # (list) Permissions
-#android.permissions = INTERNET
+android.permissions = INTERNET
 
 # (int) Target Android API, should be as high as possible.
-#android.api = 27
+android.api = 27
 
 # (int) Minimum API your APK will support.
-#android.minapi = 21
+android.minapi = 21
 
 # (int) Android SDK version to use
-#android.sdk = 20
+android.sdk = 20
 
 # (str) Android NDK version to use
-#android.ndk = 19b
+android.ndk = 19b
 
 # (int) Android NDK API to use. This is the minimum API your app will support, it should usually match android.minapi.
-#android.ndk_api = 21
+android.ndk_api = 21
 
 # (bool) Use --private data storage (True) or --dir public storage (False)
 #android.private_storage = True
@@ -223,8 +223,8 @@ android.logcat_filters = *:S python:D
 #android.copy_libs = 1
 
 # (str) The Android arch to build for, choices: armeabi-v7a, arm64-v8a, x86, x86_64
-android.arch = armeabi-v7a
-#android.arch=x86
+android.arch = arm64-v8a
+# android.arch=x86
 # (int) overrides automatic versionCode computation (used in build.gradle)
 # this is not the same as app version and should only be edited if you know what you're doing
 # android.numeric_version = 1
@@ -237,7 +237,7 @@ android.arch = armeabi-v7a
 #p4a.fork = kivy
 
 # (str) python-for-android branch to use, defaults to master
-#p4a.branch = master
+p4a.branch = develop
 
 # (str) python-for-android git clone directory (if empty, it will be automatically cloned from github)
 #p4a.source_dir =

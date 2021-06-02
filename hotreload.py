@@ -28,7 +28,7 @@ class Example(MDApp):
     path_to_kv_file = "kv_file.kv"
 
     def build(self):
-        self.theme_cls.theme_style = "Dark"
+        self.theme_cls.theme_style = "Light"
         return Builder.load_string(KV)
 
     def update_kv_file(self, text):
