@@ -1,0 +1,6 @@
+.buildozer
+examples
+bin
+dist
+build
+__pycache__

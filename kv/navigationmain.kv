@@ -1,0 +1,125 @@
+<NavigationMain>:
+    id:navigationmain
+    navigationcontent:navigationcontent
+    screenmanager:screenmanager
+    name:'navigationmain'
+    navigationtoolbar:navigationtoolbar
+    mainscreen:root.mainscreen
+    MDBoxLayout:
+        orientation:'vertical'
+
+        MDToolbar:
+            id:navigationtoolbar
+            title: "Menu Utama"
+            elevation: 10
+            type:'top'
+            left_action_items: [['menu', lambda x: nav_drawer.toggle_nav_drawer()]]
+            left_action_items: [['menu', lambda x: nav_drawer.set_state("open")]]
+        MDLabel:
+            text:''
+    MDNavigationLayout:
+        x: navigationtoolbar.height
+        size_hint_y: 1.0 - navigationtoolbar.height/root.height
+        ScreenManager:
+            id :screenmanager
+
+            MainMenu:
+                screenmanager:screenmanager
+
+            PosKasir:
+                screenmanager:screenmanager
+            
+            Product:
+                screenmanager:screenmanager
+
+        MDNavigationDrawer:
+            id:nav_drawer
+            ContentNavigationDrawer:
+                navigationmain:navigationmain
+                id:navigationcontent
+                nav_drawer:nav_drawer
+                screenmanager:screenmanager
+                navigationtoolbar:navigationtoolbar
+                mainscreen:root.mainscreen
+
+<ItemDrawer>:
+    theme_text_color: "Custom"
+    on_release: self.parent.set_color_item(self)
+
+    IconLeftWidget:
+        id: icon
+        icon: root.icon
+        theme_text_color: "Custom"
+        text_color: root.text_color
+
+<ContentNavigationDrawer>:
+    id:navigationcontent
+    mainscreen:root.mainscreen
+    orientation: "vertical"
+    padding: "8dp"
+    spacing: "8dp"
+
+    AnchorLayout:
+        anchor_x: "left"
+        size_hint_y: None
+        height: avatar.height
+
+        Image:
+            id: avatar
+            size_hint: None, None
+            size: "40dp", "40dp"
+            source: "images/avatar.png"
+
+    MDLabel:
+        text: "Richie Rahmat Hidayat"
+        font_style: "Button"
+        size_hint_y: None
+        height: self.texture_size[1]
+
+    MDLabel:
+        text: "richie130283@gmail.com"
+        font_style: "Caption"
+        size_hint_y: None
+        height: self.texture_size[1]
+
+    ScrollView:
+
+        id:scrollview
+        name:'scroll_view'
+        DrawerList:
+            screenmanager:root.screenmanager
+            nav_drawer:root.nav_drawer
+            navigationtoolbar:root.navigationtoolbar
+            mainscreen:root.mainscreen
+
+
+
+<DrawerList>:
+    mainscreen:root.mainscreen
+    # nav_drawer:nav_drawer
+    id: md_list
+    name:'drawer_list'
+    OneLineIconListItem:
+        md_list:md_list
+        text:'Cash Register'
+        on_release:root.penjualan() 
+        IconLeftWidget:
+            icon:'slot-machine'
+  
+    OneLineIconListItem:
+        text:'Produk Tambah'
+        on_release:root.product() 
+
+        IconLeftWidget:
+            icon:'bag-suitcase'
+
+    OneLineIconListItem:
+        text:'Pengaturan'
+        IconLeftWidget:
+            icon:'tools'
+
+    OneLineIconListItem:
+        text:'Logout'
+        on_release:root.logout()
+        IconLeftWidget:
+            icon:'logout'
