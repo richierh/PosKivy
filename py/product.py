@@ -38,7 +38,8 @@ class Product(MDScreen):
         # Buttons = ["sdf","sadfsdaf","asdfsda"]
         # for text in Buttons:
         #     button = MDRaisedButton(text=text,size_hint=(1,None))
-        #     # self.button.id = text
+        #     # self.button.i
+        # d = text
         #     button.bind(on_press=self.pressed)
         #     self.ids.mygrid.add_widget(button)
  

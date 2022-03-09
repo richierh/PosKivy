@@ -27,8 +27,9 @@ class PosKasir(MDScreen):
         # Tulisan dengan Ukuran dibawahnya
         imagelistmy2 =  ["Kemasan Kecil","Sachet Kecil","1 Liter"]
         # source gambar
-        source_gmbr = os.listdir('images/product')
+        # source_gmbr = os.listdir(os.getcwd()+'/images/product')
 
+        source_gmbr = os.listdir('images/product')
 
         # source_gmbr = ["cat.jpg","cat2.jpg","cat3.jpg"]
 

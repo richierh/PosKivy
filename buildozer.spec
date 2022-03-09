@@ -13,16 +13,18 @@ package.domain = org.main
 source.dir = .
 
 # (list) Source files to include (let empty to include all the files)
-source.include_exts = py,png,jpg,kv,atlas,db
+source.include_exts = py,png,jpg,kv,atlas,db,jpeg
 
 # (list) List of inclusions using pattern matching
 #source.include_patterns = assets/*,images/*.png
+source.include_patterns = images/*,images/product/*
 
 # (list) Source files to exclude (let empty to not exclude anything)
 source.exclude_exts = spec
 
 # (list) List of directory to exclude (let empty to not exclude anything)
 #source.exclude_dirs = tests, bin, venv
+source.exclude_dirs = bin, venv,.git,examples,dist,__pycahce__,build
 
 # (list) List of exclusions using pattern matching
 # Do not prefix with './'
