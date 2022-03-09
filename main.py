@@ -15,6 +15,7 @@ if platform == "android":
         Permission.READ_EXTERNAL_STORAGE, Permission.WRITE_EXTERNAL_STORAGE])
 
 class RunApplication(MDApp):
+    # directory kivy
     # kv_directory = join(dirname(__file__), 'kv')
 
     def build(self):
