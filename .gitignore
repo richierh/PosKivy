@@ -1,6 +1,6 @@
-.buildozer
-examples
-bin
-dist
-build
-__pycache__
+.buildozer/*
+examples/*
+bin/*
+dist/*
+build/*
+__pycache__/*
