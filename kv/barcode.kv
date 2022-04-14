@@ -1,0 +1,26 @@
+<BarcodeWidget>:
+    id:barcodewidget
+    screenb:screenb
+    orientation:'vertical'
+    MDBoxLayout:
+        adaptive_height:True
+        orientation:'horizontal'
+        MDTextFieldRect:
+            hint_text:'barcode input'
+        MDRaisedButton:
+            text:"Ok"
+    DataTable:
+        size_hint:1,1
+
+        id:screenb
+        orientation:'horizontal'
+        MDBoxLayout:
+            orientation:'vertical'
+            size_hint:.3,1        
+            MDLabel:
+                size_hint:1,1        
+                text:'Bagian Gambar dan item barang'
+            MDLabel:
+                size_hint:1,1        
+
+                text:'Input Kuantitas'

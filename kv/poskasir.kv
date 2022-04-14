@@ -3,59 +3,75 @@
     id:poskasir
     screenmanager:root.screenmanager
     mygrid:mygrid
-    MDBoxLayout:
-        orientation:'vertical'
-        # MDLabel:
-        #     adaptive_height:True
-        #     text:'Silahkan Cari Produk'
-        #     halign:'center'
-        #     valign:'center'
-        MDBoxLayout:
-            orientation:'horizontal'
-            adaptive_height:True
-            padding: dp(4), dp(4)
-            spacing: dp(4)
+    MDBottomNavigation:
+        MDBottomNavigationItem:
+            name: "screen 1"
+            ScreenManager:
+                id:screenmanagerproduct
+                MDScreen:
+                    name:'screenproductlist'
+                    id:screenprou
+                    MDBoxLayout:
+                        orientation:'vertical'
+                        MDBoxLayout:
+                            orientation:'horizontal'
+                            adaptive_height:True
+                            padding: dp(4), dp(4)
+                            spacing: dp(4)
 
-            MDTextFieldRect:
-                hint_text:'cari produk'
-                size_hint: 1, None
-                height: "30dp"
+                            MDTextFieldRect:
+                                hint_text:'cari produk'
+                                height: "30dp"
+                            MDRaisedButton:
+                                text:'cari'
+                        ScrollView:
+                            do_scroll: True, True
+                            size_hint:1,1
+                            MDBoxLayout:
+                                orientation:'vertical'
+                                # size_hint:None,None
+                                adaptive_height:True
+                                # adaptive_width:True
+                                MDGridLayout:
+                                    id:mygrid
+                                    cols: 5
+                                    padding: dp(4), dp(4)
+                                    spacing: dp(4)
 
-            MDRaisedButton:
-                text:'cari'
-        ScrollView:
-            MDGridLayout:
-                id:mygrid
-                cols: 3
-                adaptive_height: True
-                padding: dp(4), dp(4)
-                spacing: dp(4)
+                        MDBoxLayout:
+                            # size_hint:1,.1
+                            adaptive_height:True
+                            # adaptive_size:True
+                            orientation:'horizontal'
+                            padding: dp(4), dp(4)
+                            spacing: dp(4)
+                            MDLabel:
+                                # size_hint:1,None
+                                text:"text aja"
+                                can_capitalize:True
+                                # size:-1,30
+                            MDTextFieldRect:
+                                # size_hint:1,None
+                                # size:-1,30
+                            MDTextFieldRect:
+                                # size_hint:1,None
+                                # size:-1,30
+                            MDRaisedButton:
+                                text:'Masukan'
+                ItemCardShow:
+    
+        MDBottomNavigationItem:
+            name: "screen 2"
+            # YourContent:
 
-                # MyTile:
-                #     stars: 5
-                #     source: "cat-1.jpg"
-                #     text:'fffff'
-
-                # MyTile:
-                #     stars: 5
-                #     source: "cat-2.jpg"
-                #     text:'fffff'
-
-
-                # MyTile:
-                #     stars: 5
-                #     source: "cat-3.jpg"
-                #     text:'fffff'
-                # MDRaisedButton:
-                #     text:'df'
-                #     size_hint:1,1
-
-                    
-        MDRaisedButton:
-            text: "Kembali ke menu awal"
-            md_bg_color: 32/255, 123/255, 160/255, 1
-            on_release:root.back_mainmenu()
-
+        MDBottomNavigationItem:
+            name: "screen 3"
+            id:screenbarcode
+            text:'Barcode'
+            BarcodeWidget:
+        MDBottomNavigationItem:
+            name: "screen 4"
+            on_tab_press:root.back_mainmenu()
 
 # <myimage@SmartTileWithLabel>
 #     size_hint_y: None

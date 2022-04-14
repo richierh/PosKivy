@@ -4,6 +4,9 @@ from kivy.app import App
 import kivymd
 from os.path import join, dirname
 import os
+
+from kivy.core.window import Window
+Window.size = (800, 600)
 # from py.main_screen import MainScreen
 from py import main_screen,login_screen,navigation_main,register_screen,pos_kasir,\
     main_menu,product

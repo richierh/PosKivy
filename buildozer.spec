@@ -24,7 +24,7 @@ source.exclude_exts = spec
 
 # (list) List of directory to exclude (let empty to not exclude anything)
 #source.exclude_dirs = tests, bin, venv
-source.exclude_dirs = bin, venv,.git,examples,dist,__pycahce__,build
+source.exclude_dirs = bin, venv,.git,examples,dist,__pycahce__,build,.buildozer
 
 # (list) List of exclusions using pattern matching
 # Do not prefix with './'
@@ -251,7 +251,7 @@ android.permissions = INTERNET
 #android.uses_library =
 
 # (str) Android logcat filters to use
-#android.logcat_filters = *:S python:D.................................................................................................................
+android.logcat_filters = *:S python:D
 
 # (bool) Android logcat only display log for activity's pid
 #android.logcat_pid_only = False
