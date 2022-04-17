@@ -1,0 +1,7 @@
+.buildozer/*
+examples/*
+bin/*
+dist/*
+build/*
+__pycache__/*
+buildozer.spec

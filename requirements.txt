@@ -2,6 +2,7 @@ appdirs==1.4.4
 buildozer @ https://github.com/kivy/buildozer/archive/refs/heads/master.zip
 certifi==2021.10.8
 charset-normalizer==2.0.12
+cmake==3.22.3
 colorama==0.4.4
 Cython==0.29.28
 distlib==0.3.4
