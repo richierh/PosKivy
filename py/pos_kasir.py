@@ -12,30 +12,7 @@ from kivymd.uix.boxlayout import MDBoxLayout
 from kivy.metrics import dp
 from kivymd.uix.datatables import MDDataTable
 import os
-global k 
 
-class MyWidget(MDBoxLayout):
-
-    def __init__(self,**kwds):
-        super().__init__(**kwds)
-
-    def decrease(self):
-        global k
-
-        print('decrease')
-        if not int(self.ids.myvalue.text) <= 0 :
-            self.ids.myvalue.text = str(int(self.ids.myvalue.text)-1)
-        k = self.ids.myvalue.text
-
-        return k    
-    def increase(self):
-        global k
-
-        print('increase')
-        self.ids.myvalue.text = str(int(self.ids.myvalue.text)+1)
-        k = self.ids.myvalue.text
-
-        return k
 
 class BarcodeWidget(MDBoxLayout):
     pass
@@ -45,16 +22,16 @@ class BarcodeWidget(MDBoxLayout):
 # IndexError: list index out of range
 
 class DataTable(MDBoxLayout):
-    # screenb=ObjectProperty()
-    def __init__(self,**kwargs):
-        super().__init__(**kwargs)
-        self.load_table()
+
+    def __init__(self,*args,**kwargs):
+        super().__init__(*args,**kwargs)
+        datatables = self.load_table()
         # import pdb
         # pdb.set_trace()
-        self.add_widget(self.load_table())
+        # self.a = MDBoxLayout(orientation='vertical')
+        self.add_widget(datatables)
         # self.size_hint = (0.7,1)
         
-        pass
     def load_table(self):
         self.data_tables = MDDataTable(
             size_hint=(1, 1),
