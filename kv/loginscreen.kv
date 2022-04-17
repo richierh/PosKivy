@@ -1,0 +1,79 @@
+#:import get_color_from_hex kivy.utils.get_color_from_hex
+
+<LoginScreen>:
+    id:loginscreen
+    name:'login_screen'
+    # md_bg_color:get_color_from_hex("#207BA0")
+    pos_hint:{'center_x':.5,'center_y':.5}
+
+    canvas.before:
+        Rectangle:
+            pos: self.pos
+            size: self.size
+            source: "images/background_login.png"
+    # size:self.parent.size
+    # pos :self.parent.pos
+    # size_hint:1,1
+    # pos_hint:{'center_x':.5,'center_y':.5}
+    # adaptive_width:True
+    # adaptive_size:True
+    adaptive_height:True
+    MDBoxLayout:
+        adaptive_height:True
+        pos_hint:{'center_x':.5,'center_y':.8}
+        orientation:'vertical'
+        Image:  
+            source:"images/mesinkasir.png"
+            pos_hint:{'center_x':.5,'center_y':.5}
+
+            size_hint:.15,.15
+    MDBoxLayout:
+        orientation:'vertical'
+        pos_hint:{'center_x':.5,'center_y':.5}
+        pos:self.parent.pos
+        size:self.size
+        spacing:10
+        adaptive_height:True
+        MDLabel:
+            text:'Selamat Datang di Software Kasir'
+            halign:'center'
+
+        MDTextField:
+            pos_hint:{'center_x':.5,'center_y':.5}
+            size_hint:.5,None
+            color_mode: 'custom'
+            hint_text: "Username/Phone Number"
+            mode: "rectangle"
+            line_color_normal:32/255, 123/255, 160/255, 1
+            line_color_focus: 32/255, 123/255, 160/255, 1
+
+        MDTextField:
+            pos_hint:{'center_x':.5,'center_y':1}
+            pos:self.parent.pos
+            size_hint:.5,None
+            color_mode: 'custom'
+            hint_text: "Password"
+            mode: "rectangle"
+            line_color_normal:32/255, 123/255, 160/255, 1
+            line_color_focus: 32/255, 123/255, 160/255, 1
+       
+    MDBoxLayout:
+        orientation:'horizontal'
+        pos:100,100
+        pos_hint:{'center_x':.5,'center_y':.3}
+        adaptive_width:True
+        adaptive_height:True
+        spacing :20
+        MDFillRoundFlatButton:
+            text: "Login"
+            # pos_hint:{'center_x':.5,'center_y':0}
+            # md_bg_color: get_color_from_hex("#207BA0")
+            md_bg_color: 32/255, 123/255, 160/255, 1
+            on_release:root.login()
+        MDFillRoundFlatButton:
+            text: "Sign Up"
+            # pos_hint:{'center_x':.5,'center_y':0}
+            # md_bg_color: get_color_from_hex("#207BA0")
+            md_bg_color: 32/255, 123/255, 160/255, 1
+            on_release:root.sign_up()
+

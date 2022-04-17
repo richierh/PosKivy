@@ -1,0 +1,73 @@
+<Product>:
+    name:'product'
+    id:product
+    screenmanager:root.screenmanager
+    # MDBoxLayout:
+    #     orientation:'vertical'
+    #     MDLabel:
+    #         text:'Product'
+    #         halign:'center'
+    MDBoxLayout:
+        orientation:'vertical'
+        # MDLabel:
+        #     adaptive_height:True
+        #     text:'Silahkan Cari Produk'
+        #     halign:'center'
+        #     valign:'center'
+        MDBoxLayout:
+            orientation:'horizontal'
+            adaptive_height:True
+            padding: dp(4), dp(4)
+            spacing: dp(4)
+
+            MDTextFieldRect:
+                hint_text:'cari produk'
+                size_hint: 1, None
+                height: "30dp"
+
+            MDRaisedButton:
+                text:'cari'
+        ScrollView:
+            MDGridLayout:
+                id:mygrid
+                cols: 3
+                adaptive_height: True
+                padding: dp(4), dp(4)
+                spacing: dp(4)
+
+                # MyTile:
+                #     stars: 5
+                #     source: "cat-1.jpg"
+                #     text:'fffff'
+
+                # MyTile:
+                #     stars: 5
+                #     source: "cat-2.jpg"
+                #     text:'fffff'
+
+
+                # MyTile:
+                #     stars: 5
+                #     source: "cat-3.jpg"
+                #     text:'fffff'
+                # MDRaisedButton:
+                #     text:'df'
+                #     size_hint:1,1
+
+                    
+        MDRaisedButton:
+            text: "Kembali ke menu awal"
+            md_bg_color: 32/255, 123/255, 160/255, 1
+            on_release:root.back_mainmenu()
+        MDBottomAppBar:
+
+            MDToolbar:
+                title: "Title"
+                icon: "git"
+                type: "bottom"
+                left_action_items: [["menu", lambda x: x]]
+                mode: "free-end"
+
+# <myimage@SmartTileWithLabel>
+#     size_hint_y: None
+#     height: "240dp"
