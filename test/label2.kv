@@ -1,0 +1,11 @@
+<Label2@BoxLayout>:
+    orientation:"vertical"
+    presentate : presentate
+    Label:
+        id:presentate
+        text:"hello"
+    Button:
+        id:button
+        text:"Press Here"
+        on_release: root.presentate.text="okay"
+    
