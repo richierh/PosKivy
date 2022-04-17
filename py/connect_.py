@@ -5,7 +5,7 @@ from os.path import exists
 # to make append directory of different folder so it makes easier to import python module
 # print(os.pardir())
 # print(os.path.abspath(os.path.join(os.getcwd(), os.pardir)))
-# print(os.getcwd())
+# print(os.getcwd())dfdfdf
 
 sys.path.append(os.getcwd())
 from databases.db_connection import *
