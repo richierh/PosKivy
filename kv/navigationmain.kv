@@ -5,6 +5,7 @@
     name:'navigationmain'
     navigationtoolbar:navigationtoolbar
     mainscreen:root.mainscreen
+
     MDBoxLayout:
         orientation:'vertical'
 
@@ -15,11 +16,14 @@
             type:'top'
             left_action_items: [['menu', lambda x: nav_drawer.toggle_nav_drawer()]]
             left_action_items: [['menu', lambda x: nav_drawer.set_state("open")]]
+
         MDLabel:
             text:''
+
     MDNavigationLayout:
         x: navigationtoolbar.height
         size_hint_y: 1.0 - navigationtoolbar.height/root.height
+
         ScreenManager:
             id :screenmanager
 
@@ -34,6 +38,7 @@
 
         MDNavigationDrawer:
             id:nav_drawer
+
             ContentNavigationDrawer:
                 navigationmain:navigationmain
                 id:navigationcontent
@@ -103,6 +108,7 @@
         md_list:md_list
         text:'Cash Register'
         on_release:root.penjualan() 
+        
         IconLeftWidget:
             icon:'slot-machine'
   
@@ -115,6 +121,7 @@
 
     OneLineIconListItem:
         text:'Pengaturan'
+
         IconLeftWidget:
             icon:'tools'
 

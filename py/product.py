@@ -44,9 +44,9 @@ class Product(MDScreen):
         #     self.ids.mygrid.add_widget(button)
  
         print('this is online when start')
+
     def pressed(self,t):
         print(t.text)
-
 
     def on_kv_post(self, test):
         # import pdb

@@ -177,8 +177,6 @@ class ItemCardShow(MDScreen):
     def cancel_posscreen(self):
         self.screenmanagerproduct.current = 'screenproductlist'
 
-    
-
     def back_posscreen(self):
         self.screenmanagerproduct.current = 'screenproductlist'
         # import pdb

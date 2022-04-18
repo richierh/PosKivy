@@ -1,25 +1,24 @@
 <ItemCardShow>:
     mylabelproduk:mylabelproduk
     myproduct:root.myproduct
-    # myproduct = []
+    adaptive_height:True
+    size_hint:1,1
     screenmanagerproduct:root.screenmanagerproduct
-    MDBoxLayout:
-        orientation:'vertical'
-        # MDImage:
-        #     source:root.screenmanager
-        MDLabel:
-            id:mylabelproduk
-            name:'my label'
-            halign:'center'
-            # text:'Disini ada detail produk yang akan dbeli'
-
 
     MDBoxLayout:
         orientation:'vertical'
         adaptive_height:True
-        # pos_hint:{'center_x':.5 , 'center_y':0}
-        
+        size_hint: 1,.8
         spacing:5
+
+        Image:
+            source:"/home/cireng/Projects/Cashier/images/mesinkasir.png"
+
+        MDLabel:
+            id:mylabelproduk
+            name:'my label'
+            halign:'center'
+
         MDRaisedButton:
             size_hint:0.9,0
             screenmanagerproduct:root.screenmanagerproduct

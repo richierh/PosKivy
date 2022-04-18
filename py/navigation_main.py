@@ -27,7 +27,6 @@ class ContentNavigationDrawer(MDBoxLayout):
         pass
 
 
-
 class ItemDrawer(OneLineIconListItem):
     icon = StringProperty()
     pass
@@ -35,6 +34,7 @@ class ItemDrawer(OneLineIconListItem):
 
 class DrawerList(ThemableBehavior, MDList):
     md_list = ObjectProperty()
+
     def set_color_item(self, instance_item):
         '''Called when tap on a menu item.'''
 
@@ -54,13 +54,11 @@ class DrawerList(ThemableBehavior, MDList):
             "checkbox-marked": "Shared with me",
             "upload": "Upload",
         }
-        # import pdb
-        # pdb.set_trace()
-
         for icon_name in icons_item.keys():
             self.root.ids.content_drawer.ids.md_list.add_widget(
                 ItemDrawer(icon=icon_name, text=icons_item[icon_name])
             )
+            
     def penjualan(self):
         print ('hhh')
         # import pdb
@@ -75,7 +73,7 @@ class DrawerList(ThemableBehavior, MDList):
         self.nav_drawer.set_state('close')
         self.screenmanager.current='product'
         self.navigationtoolbar.title="Produk"
+
     def logout(self):
         print("logout")
-
         self.mainscreen.current="login_screen"

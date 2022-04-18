@@ -14,5 +14,6 @@
             "username": "pmc"
         }
     ],
-    "python.pythonPath": "/home/cireng/.virtualenvs/KivyPos/bin/python"
+    "python.pythonPath": "/home/cireng/.virtualenvs/KivyPos/bin/python",
+    "materialkv.pythonFile": "main.py"
 }

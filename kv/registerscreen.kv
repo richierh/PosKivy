@@ -1,0 +1,42 @@
+<RegisterScreen>:
+    id:registerscreen
+    mainscreen:root.mainscreen
+    successscreen:root.successscreen
+    name:'signup'
+    myscreenmanager:myscreenmanager
+   
+    ScreenManager:
+        id:myscreenmanager
+        FirstScreen:   
+
+            name:'signup'
+            mainscreen:root.mainscreen
+
+            MDBoxLayout:
+                orientation:"vertical"
+                MDBoxLayout:
+                    orientation:"horizontal"
+
+                MDLabel:
+                    text:'This is only For Test'
+
+                MDBoxLayout:
+                    orientation:"horizontal"
+                    MDRaisedButton:
+                        text:'Go'
+                        on_release:root.go_forward()
+
+                    MDRaisedButton:
+                        text:'Back'
+                        on_release:root.go_back_mainscreen()
+
+        Success:
+            # registerscreen:registerscreen
+            id:successscreen
+            name:'myscreen'
+            MDLabel:
+                text:"you are success"
+            
+            MDRaisedButton:
+                text:'Finished'
+                on_release:root.continue_login()
