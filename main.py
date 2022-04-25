@@ -5,8 +5,8 @@ import kivymd
 from os.path import join, dirname
 import os
 
-from kivy.core.window import Window
-Window.size = (800, 600)
+# from kivy.core.window import Window
+# Window.size = (800, 600)
 # from py.main_screen import MainScreen
 from py import main_screen,login_screen,navigation_main,register_screen,pos_kasir,\
     main_menu,product
@@ -40,10 +40,10 @@ class RunApplication(MDApp):
     #     # import pdb
     #     # pdb.set_trace()
 
-    #     for icon_name in icons_item.keys():
     #         self.root.ids.content_drawer.ids.md_list.add_widget(
-    #             ItemDrawer(icon=icon_name, text=icons_item[icon_name])
+    #             ItemDra                   wer(icon=icon_name, text=icons_item[icon_name])
     #         )
 
 if __name__=="__main__":
+    #     for icon_name in icons_item.keys():
     RunApplication().run()
